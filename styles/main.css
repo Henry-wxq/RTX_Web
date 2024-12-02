@@ -45,6 +45,12 @@ body {
     gap: 35px;
 }
 
+.list-styled li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .list-styled li:last-child {
     margin-left: auto;
 }
@@ -54,13 +60,19 @@ body {
     text-decoration: none;
     font-size: 12px;
     font-weight: 500;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    padding: 10px 0;
 }
 
 .logo img {
     height: 40px;
     width: auto;
     vertical-align: middle;
-    margin-right: 10px;
 }
 
 /* Hero Section */
@@ -545,5 +557,94 @@ html {
 @media (max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;
+    }
+} 
+
+/* Dropdown Panel Styles */
+.nav-item {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.15s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    pointer-events: none;
+}
+
+.nav-item:hover .nav-dropdown,
+.nav-dropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px var(--spacing-unit);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    padding: 12px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item h3 {
+    font-size: 17px;
+    margin: 0;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* Hide descriptions */
+.dropdown-item p {
+    display: none;
+}
+
+/* Add hover delay with JavaScript */
+.nav-item .nav-dropdown {
+    transition-delay: 0.2s;
+}
+
+.nav-item:hover .nav-dropdown {
+    transition-delay: 0s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dropdown-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dropdown-content {
+        padding: 20px var(--spacing-unit);
     }
 } 

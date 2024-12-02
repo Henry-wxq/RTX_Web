@@ -79,4 +79,38 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
     section.classList.add('fade-out');
     observer.observe(section);
+});
+
+// Enhanced dropdown interaction
+document.querySelectorAll('.nav-item').forEach(item => {
+    let timeout;
+    const dropdown = item.querySelector('.nav-dropdown');
+    
+    if (!dropdown) return;
+
+    item.addEventListener('mouseenter', () => {
+        clearTimeout(timeout);
+        dropdown.style.opacity = '1';
+        dropdown.style.visibility = 'visible';
+        dropdown.style.transform = 'translateY(0)';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+            dropdown.style.opacity = '0';
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.transform = 'translateY(-10px)';
+        }, 100);
+    });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item')) {
+        document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+            dropdown.style.opacity = '0';
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.transform = 'translateY(-10px)';
+        });
+    }
 }); 

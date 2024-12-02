@@ -648,3 +648,18 @@ html {
         padding: 20px var(--spacing-unit);
     }
 } 
+
+/* Add these styles to ensure dropdowns are visible */
+.nav-dropdown {
+    display: block !important;
+    z-index: 9999;
+}
+
+.nav-item {
+    position: relative !important;
+}
+
+.dropdown-content {
+    position: relative;
+    z-index: 10000;
+} 

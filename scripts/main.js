@@ -113,4 +113,18 @@ document.addEventListener('click', (e) => {
             dropdown.style.transform = 'translateY(-10px)';
         });
     }
+});
+
+// Add this debugging code
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded');
+    const navItems = document.querySelectorAll('.nav-item');
+    console.log('Nav items found:', navItems.length);
+    
+    navItems.forEach(item => {
+        const dropdown = item.querySelector('.nav-dropdown');
+        if (dropdown) {
+            console.log('Dropdown found for item');
+        }
+    });
 }); 

@@ -857,3 +857,234 @@ html {
         flex: 0 1 120px;
     }
 } 
+
+.industry-solutions {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.industry-solutions .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    color: #242424;
+    font-weight: 400;
+    margin: 0;
+}
+
+.view-all {
+    color: #0071e3;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.view-all:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.industry-card {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.industry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.industry-card .icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.industry-card .icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #0071e3;
+}
+
+.industry-card h3 {
+    color: #242424;
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.industry-card p {
+    color: #515154;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.industry-card .learn-more {
+    color: #0071e3;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.industry-card:hover .learn-more {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .industry-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+.enterprise-apps {
+    background-color: #1c2834;
+    color: white;
+    padding: 80px 0;
+}
+
+.enterprise-apps .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.enterprise-apps .section-label {
+    color: #8b95a1;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.enterprise-apps h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.enterprise-apps .section-intro {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e6e9ec;
+    margin-bottom: 48px;
+    max-width: 900px;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.app-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.app-card h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.app-card p {
+    color: #e6e9ec;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.app-card .explore-link {
+    color: #0071e3;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.app-card:hover .explore-link {
+    color: #2b8ffc;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .apps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .enterprise-apps h2 {
+        font-size: 32px;
+    }
+
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .app-card {
+        padding: 24px;
+    }
+} 

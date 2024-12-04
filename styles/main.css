@@ -827,8 +827,8 @@ html {
 }
 
 .partner-logo {
-    width: 160px;
-    height: 60px;
+    width: 200px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -858,12 +858,22 @@ html {
     .partner-logos {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .partner-logo {
+        width: 180px;
+        height: 70px;
+    }
 }
 
 @media (max-width: 768px) {
     .partner-logos {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+    
+    .partner-logo {
+        width: 160px;
+        height: 60px;
     }
 } 
 

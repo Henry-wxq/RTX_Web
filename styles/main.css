@@ -1107,3 +1107,72 @@ html {
         padding: 24px;
     }
 } 
+
+.infor-recognition {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.infor-recognition .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 40px auto;
+}
+
+.recognition-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.recognition-card:hover {
+    transform: translateY(-5px);
+}
+
+.recognition-card .icon {
+    margin-bottom: 20px;
+}
+
+.recognition-card .icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.recognition-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.recognition-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.recognition-card .read-more {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.recognition-card .read-more:hover {
+    color: #4f46e5;
+}
+
+@media (max-width: 768px) {
+    .recognition-grid {
+        grid-template-columns: 1fr;
+    }
+} 

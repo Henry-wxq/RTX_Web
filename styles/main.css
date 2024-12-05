@@ -689,6 +689,16 @@ html {
     font-weight: 500;
 }
 
+.location-card .email {
+    color: #0071e3;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.location-card .email:hover {
+    text-decoration: underline;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .locations-grid {

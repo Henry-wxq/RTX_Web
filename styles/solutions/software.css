@@ -1,0 +1,193 @@
+/* Base section styles */
+.consulting-section {
+    margin: 0;
+    padding: 80px 60px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Features grid layout */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Feature item styles */
+.feature-item {
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.feature-item p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* Section title styles */
+.features-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Alternating section background colors */
+.consulting-section:nth-child(1) {
+    background: linear-gradient(135deg, #0072db 0%, #4da3ff 100%);
+}
+
+.consulting-section:nth-child(2) {
+    background: linear-gradient(135deg, #1a4567 0%, #4e9ad1 100%);
+}
+
+.consulting-section:nth-child(3) {
+    background: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+}
+
+.consulting-section:nth-child(4) {
+    background: linear-gradient(135deg, #006064 0%, #00acc1 100%);
+}
+
+.consulting-section:nth-child(5) {
+    background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+}
+
+.consulting-section:nth-child(6) {
+    background: linear-gradient(135deg, #0277bd 0%, #4fc3f7 100%);
+}
+
+/* Animation classes */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section navigation styles */
+.section-nav {
+    position: sticky;
+    top: 60px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.section-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.section-nav a {
+    display: block;
+    padding: 15px 25px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.section-nav a:hover,
+.section-nav a.active {
+    color: #0072db;
+    border-bottom-color: #0072db;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .consulting-section {
+        padding: 60px 30px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .features-title {
+        font-size: 2em;
+    }
+
+    .section-nav {
+        overflow-x: auto;
+    }
+
+    .section-nav ul {
+        width: max-content;
+        padding: 0 20px;
+    }
+
+    .section-nav a {
+        padding: 15px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Page header styles */
+.page-header {
+    padding: 180px 20px 100px;
+    text-align: center;
+    position: relative;
+    background-image: url('../../images/solutions/software.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin-top: 60px;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-header p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto;
+}

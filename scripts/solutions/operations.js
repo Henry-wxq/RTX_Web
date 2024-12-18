@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Simple intersection observer
+    // Simple intersection observer with adjusted options
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach(entry => {
@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         },
         {
-            threshold: 0.1
+            threshold: 0.01,  // Reduced threshold to trigger earlier
+            rootMargin: '50px'  // Added margin to pre-load content before it's visible
         }
     );
 

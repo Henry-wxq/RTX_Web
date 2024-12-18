@@ -1,0 +1,267 @@
+.blog-content {
+    padding: 4rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.featured-image {
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+}
+
+.partner-article {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+.article-meta {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.article-meta span {
+    margin-right: 2rem;
+    color: #666;
+}
+
+.article-section {
+    margin-bottom: 4rem;
+}
+
+.article-section h2 {
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 1.8rem;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 4px solid #0066cc;
+}
+
+.challenge-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.challenge-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0066cc;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.solution-item {
+    padding: 1.25rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.solution-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+}
+
+.solution-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.solution-item p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.results-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+blockquote {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-left: 4px solid #0066cc;
+    font-style: italic;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    color: #666;
+}
+
+.cta-section {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: #f8f9fa;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #0066cc;
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+}
+
+.project-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.spec-item {
+    text-align: center;
+}
+
+.spec-label {
+    display: block;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.spec-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.function-areas {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.area-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.area-list li {
+    padding: 1rem;
+    background: white;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.solution-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .blog-content {
+        padding: 2rem 0;
+    }
+    
+    .results-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons .btn {
+        display: block;
+        margin: 1rem 0;
+    }
+    
+    .area-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-specs {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    
+    .spec-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .spec-item:last-child {
+        border-bottom: none;
+    }
+    
+    .solution-list {
+        grid-template-columns: 1fr;
+    }
+}

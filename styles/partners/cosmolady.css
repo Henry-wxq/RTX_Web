@@ -1,0 +1,35 @@
+/* Inherit base styles from peacebird.css */
+@import url('peacebird.css');
+
+/* Custom styles specific to Cosmolady page */
+.page-header {
+    background-color: #ff69b4;  /* Pink theme for Cosmolady */
+    color: #000;  /* Changed from white to black */
+}
+
+.article-meta {
+    border-color: #ff69b4;
+}
+
+.article-section h2 {
+    border-left-color: #ff69b4;
+}
+
+.btn-primary {
+    background: #ff69b4;
+}
+
+.btn-secondary {
+    color: #ff69b4;
+    border-color: #ff69b4;
+}
+
+.stat-number {
+    color: #ff69b4;
+}
+
+.spec-value {
+    color: #ff69b4;  /* Added to make the numbers pink */
+}
+
+/* Additional custom styles can be added here */

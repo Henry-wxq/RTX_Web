@@ -299,7 +299,9 @@
 .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.6s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+    margin-top: -20px;
 }
 
 .fade-in-section.is-visible {
@@ -411,7 +413,7 @@
     padding: 180px 20px 100px;
     text-align: center;
     position: relative;
-    background-image: url('../../images/solutions/consulting/top.jpg');
+    background-image: url('../../images/solutions/operations.webp');
     background-size: cover;
     background-position: center;
     color: white;

@@ -1,0 +1,124 @@
+.client-stories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.client-case {
+    display: flex;
+    flex-direction: row-reverse;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.client-case:hover {
+    transform: translateY(-5px);
+}
+
+.client-case img {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+    padding: 2rem;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.case-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.case-content h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.case-content p {
+    margin: 0 0 1rem 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .client-case {
+        flex-direction: column;
+    }
+
+    .client-case img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .case-content {
+        padding: 1.5rem;
+    }
+}
+
+/* Add these new styles while keeping existing ones */
+
+.alphabet-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+}
+
+.alphabet-nav a {
+    color: #666;
+    text-decoration: none;
+    padding: 0.5rem;
+    min-width: 2rem;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.alphabet-nav a:hover {
+    background: #f0f0f0;
+    color: #007bff;
+}
+
+.alphabet-nav a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+
+.letter-section {
+    scroll-margin-top: 100px; /* Ensures proper scrolling with sticky header */
+}
+
+.letter-header {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 2rem 0 1rem;
+    padding-left: 1rem;
+    border-left: 4px solid #007bff;
+}

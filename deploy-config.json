@@ -1,0 +1,64 @@
+{
+  "provider": "aws",
+  "aws": {
+    "bucket": "your-bucket-name",
+    "region": "us-east-1",
+    "cloudfront": {
+      "enabled": false,
+      "distributionId": ""
+    },
+    "website": {
+      "indexDocument": "index.html",
+      "errorDocument": "index.html"
+    }
+  },
+  "gcs": {
+    "bucket": "your-bucket-name",
+    "region": "us-central1",
+    "website": {
+      "mainPageSuffix": "index.html",
+      "notFoundPage": "index.html"
+    }
+  },
+  "azure": {
+    "storageAccount": "your-storage-account",
+    "container": "your-container-name",
+    "resourceGroup": "your-resource-group",
+    "location": "eastus",
+    "website": {
+      "indexDocument": "index.html",
+      "errorDocument": "index.html"
+    }
+  },
+  "backend": {
+    "provider": "serverless",
+    "serverless": {
+      "platform": "aws",
+      "functionName": "rtx-web-contact-api",
+      "runtime": "nodejs18.x",
+      "region": "us-east-1"
+    },
+    "container": {
+      "imageName": "rtx-web-backend",
+      "registry": "your-registry"
+    },
+    "server": {
+      "host": "your-server.com",
+      "port": 3000
+    }
+  },
+  "cdn": {
+    "enabled": false,
+    "provider": "cloudfront"
+  },
+  "cache": {
+    "enabled": true,
+    "maxAge": 31536000,
+    "staticAssets": {
+      "images": 31536000,
+      "css": 86400,
+      "js": 86400,
+      "html": 3600
+    }
+  }
+}

@@ -31,107 +31,34 @@ window.addEventListener('scroll', () => {
 
 // Form validation and submission
 const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Get form elements
-        const button = this.querySelector('button[type="submit"]');
-        const originalText = button.textContent;
-        const originalBgColor = button.style.backgroundColor;
-        
-        // Collect form data
-        const formData = {
-            firstName: document.getElementById('firstName')?.value.trim(),
-            lastName: document.getElementById('lastName')?.value.trim(),
-            businessEmail: document.getElementById('businessEmail')?.value.trim(),
-            companyName: document.getElementById('companyName')?.value.trim(),
-            phoneNumber: document.getElementById('phoneNumber')?.value.trim(),
-            country: document.getElementById('country')?.value,
-            industry: document.getElementById('industry')?.value
-        };
-        
-        // Client-side validation
-        if (!formData.firstName || !formData.lastName || !formData.businessEmail || 
-            !formData.companyName || !formData.phoneNumber || !formData.country || !formData.industry) {
-            alert('Please fill in all required fields');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.businessEmail)) {
-            alert('Please enter a valid email address');
-            return;
-        }
-        
-        // Disable button and show loading state
-        button.disabled = true;
-        button.textContent = 'Sending...';
-        button.style.backgroundColor = '#999';
-        
-        try {
-            // Get API endpoint from environment or use default
-            const API_URL = window.API_URL || 'http://localhost:3000/api/contact';
-            
-            // Send form data to backend
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            });
-            
-            const data = await response.json();
-            
-            if (response.ok && data.success) {
-                // Show success message
-                button.textContent = 'Message Sent!';
-                button.style.backgroundColor = '#34c759';
-                
-                // Show success message to user
-                alert(data.message || 'Your message has been sent successfully. We will contact you within 24 business hours.');
-                
-                // Reset form
-                this.reset();
-                
-                // Reset button after delay
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.backgroundColor = originalBgColor;
-                    button.disabled = false;
-                }, 3000);
-            } else {
-                // Show error message
-                button.textContent = 'Error';
-                button.style.backgroundColor = '#ff3b30';
-                alert(data.error || 'An error occurred. Please try again later.');
-                
-                // Reset button after delay
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.backgroundColor = originalBgColor;
-                    button.disabled = false;
-                }, 3000);
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            
-            // Show error message
-            button.textContent = 'Error';
-            button.style.backgroundColor = '#ff3b30';
-            alert('Network error. Please check your connection and try again.');
-            
-            // Reset button after delay
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.style.backgroundColor = originalBgColor;
-                button.disabled = false;
-            }, 3000);
-        }
-    });
-}
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const message = this.querySelector('textarea').value;
+    
+    if (!name || !email || !message) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    // Here you would typically send the form data to your server
+    console.log('Form submitted:', { name, email, message });
+    
+    // Show success message
+    const button = this.querySelector('button');
+    const originalText = button.textContent;
+    button.textContent = 'Message Sent!';
+    button.style.backgroundColor = '#34c759';
+    
+    // Reset form and button
+    setTimeout(() => {
+        this.reset();
+        button.textContent = originalText;
+        button.style.backgroundColor = '';
+    }, 3000);
+});
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
